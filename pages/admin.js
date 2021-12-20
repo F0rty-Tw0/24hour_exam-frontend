@@ -98,7 +98,7 @@ const Admin = ({ parties }) => {
 };
 const getStaticProps = async () => {
   const parties = await getAllParties();
-  return { props: { parties }, revalidate: 60 };
+  return { props: { parties }, revalidate: 1 };
 };
 
 export { getStaticProps };

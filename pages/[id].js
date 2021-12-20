@@ -50,7 +50,7 @@ export async function getStaticProps({ params: { id } }) {
   const candidates = await getCandidatesByPartyId(id);
   return {
     props: { candidates },
-    revalidate: 60,
+    revalidate: 1,
   };
 }
 

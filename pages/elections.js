@@ -67,7 +67,7 @@ const getStaticProps = async () => {
     candidates.unshift({ votes: partyVotes });
   });
   parties.sort((a, b) => b[0].votes - a[0].votes);
-  return { props: { parties }, revalidate: 60 };
+  return { props: { parties }, revalidate: 1 };
 };
 
 export { getStaticProps };

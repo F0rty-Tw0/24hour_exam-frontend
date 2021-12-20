@@ -22,7 +22,7 @@ const Candidates = ({ candidates }) => {
 
 const getStaticProps = async () => {
   const candidates = await getAllCandidates();
-  return { props: { candidates }, revalidate: 60 };
+  return { props: { candidates }, revalidate: 1 };
 };
 
 export { getStaticProps };
