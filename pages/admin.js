@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Router from 'next/router';
 import { useState, useCallback } from 'react';
 import BaseLayout from 'layouts/BaseLayout';
 import { getAllParties } from 'endpoints/parties';
@@ -13,6 +14,7 @@ const Admin = ({ parties }) => {
     async (event) => {
       event.preventDefault();
       createCandidate(formData);
+      Router.reload();
     },
     [formData]
   );

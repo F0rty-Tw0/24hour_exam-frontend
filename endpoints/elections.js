@@ -3,4 +3,9 @@ import { makeRequest } from 'services/fetchApi';
 const getElectionsByDate = (date) => {
   return makeRequest('GET', null, `elections/date/${date}`);
 };
-export { getElectionsByDate };
+
+const incrementVoteCount = (id) => {
+  return makeRequest('GET', null, `elections/increment/${id}`);
+};
+
+export { getElectionsByDate, incrementVoteCount };

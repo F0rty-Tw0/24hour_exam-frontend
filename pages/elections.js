@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { MdHowToVote } from 'react-icons/md';
 import BaseLayout from 'layouts/BaseLayout';
 import { getAllParties } from 'endpoints/parties';
@@ -24,18 +25,23 @@ const Elections = ({ parties }) => {
             </div>
             <div className='parties__profiles'>
               {parties?.map((candidates, index) => {
-                let partyAbr = candidates[1].candidate.party.abbreviation;
-                let partyName = candidates[1].candidate.party.name;
-                let partyVotes = candidates[0].votes;
+                const partyId = candidates[1].candidate.party.id;
+                const partyAbr = candidates[1].candidate.party.abbreviation;
+                const partyName = candidates[1].candidate.party.name;
+                const partyVotes = candidates[0].votes;
                 return (
-                  <div className='parties__profile' key={index}>
-                    <div className='parties__picture'>{partyAbr}</div>
-                    <div className='parties__name'>
-                      <p>{partyName}</p>
-                      {/* <p className='parties__vote'>VOTE</p> */}
-                    </div>
-                    <span className='parties__value'>{partyVotes}</span>
-                  </div>
+                  <Link passHref key={index} href={`/${partyId}`}>
+                    <a>
+                      <div className='parties__profile'>
+                        <div className='parties__picture'>{partyAbr}</div>
+                        <div className='parties__name'>
+                          <p>{partyName}</p>
+                          {/* <p className='parties__vote'>VOTE</p> */}
+                        </div>
+                        <span className='parties__value'>{partyVotes}</span>
+                      </div>
+                    </a>
+                  </Link>
                 );
               })}
             </div>

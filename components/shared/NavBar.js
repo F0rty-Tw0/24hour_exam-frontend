@@ -4,7 +4,6 @@ import Link from 'next/link';
 import {
   BiHomeAlt,
   BiBookAlt,
-  BiBriefcaseAlt,
   BiMessageSquareDetail,
   BiUser,
 } from 'react-icons/bi';

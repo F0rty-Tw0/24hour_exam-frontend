@@ -1,6 +1,6 @@
 import BaseLayout from 'layouts/BaseLayout';
 import { getAllCandidates } from 'endpoints/candidates';
-
+import Candidate from '@/Candidate';
 const Candidates = ({ candidates }) => {
   return (
     <BaseLayout
@@ -8,9 +8,14 @@ const Candidates = ({ candidates }) => {
       description='Voting was never that easy before. With Easy Vote you can vote remotely without getting out your comfort zone.'
       className='base-layout__candidates'
     >
-      {candidates.map((candidate) => (
-        <div key={candidate.id}>{candidate.name}</div>
-      ))}
+      <div className='form__container'>
+        <div className='form__wrapper'>
+          <span className='form__title'>All Candidates</span>
+          {candidates.map((candidate) => (
+            <Candidate key={candidate.id} candidate={candidate} />
+          ))}
+        </div>
+      </div>
     </BaseLayout>
   );
 };

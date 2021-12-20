@@ -89,3 +89,8 @@
     color: $color-primary;
   }
 }
+
+.candidates {
+  margin-top: $spacing-xs;
+  grid-template-columns: 1fr 0fr 0fr;
+}

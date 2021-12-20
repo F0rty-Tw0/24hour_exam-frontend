@@ -81,3 +81,23 @@ input::-webkit-inner-spin-button {
 input[value='0000-00-00']::-webkit-datetime-edit {
   color: transparent;
 }
+
+.remove,
+.edit,
+.save {
+  margin-left: $spacing-xs;
+  font-size: $font-size-m;
+
+  transition: all 0.4s;
+  &:hover {
+    opacity: 0.2;
+  }
+}
+
+.remove {
+  color: $color-danger;
+}
+.edit,
+.save {
+  color: $color-primary;
+}
