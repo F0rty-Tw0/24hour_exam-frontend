@@ -1,6 +1,7 @@
 import { MdHowToVote } from 'react-icons/md';
 import BaseLayout from 'layouts/BaseLayout';
-// import { getAllParties } from 'endpoints/parties';
+import { getAllParties } from 'endpoints/parties';
+import { getElectionsByDate } from 'endpoints/elections';
 
 const Parties = ({ parties }) => {
   return (
@@ -22,15 +23,21 @@ const Parties = ({ parties }) => {
               </h1>
             </div>
             <div className='parties__profiles'>
-              {parties?.map((party) => (
-                <div className='parties__profile' key={party.id}>
-                  <div className='parties__picture'>{party.abbreviation}</div>
-                  <div className='parties__name'>
-                    <p>{party.name}</p> <p className='parties__vote'>VOTE</p>
+              {parties?.map((candidates, index) => {
+                let partyAbr = candidates[1].candidate.party.abbreviation;
+                let partyName = candidates[1].candidate.party.name;
+                let partyVotes = candidates[0].votes;
+                return (
+                  <div className='parties__profile' key={index}>
+                    <div className='parties__picture'>{partyAbr}</div>
+                    <div className='parties__name'>
+                      <p>{partyName}</p>
+                      {/* <p className='parties__vote'>VOTE</p> */}
+                    </div>
+                    <span className='parties__value'>{partyVotes}</span>
                   </div>
-                  <span className='parties__value'>35.7</span>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </section>
         </div>
@@ -39,4 +46,23 @@ const Parties = ({ parties }) => {
   );
 };
 
+const getStaticProps = async () => {
+  const allParties = await getAllParties();
+  const elections = await getElectionsByDate('2021-01-01');
+  let parties = [];
+  allParties.map((party) => {
+    parties.push(
+      elections.filter((election) => election.candidate.party.id === party.id)
+    );
+  });
+  parties.map((candidates) => {
+    let partyVotes = 0;
+    candidates.map((candidate) => (partyVotes += candidate.votes));
+    candidates.unshift({ votes: partyVotes });
+  });
+  parties.sort((a, b) => b[0].votes - a[0].votes);
+  return { props: { parties }, revalidate: 60 };
+};
+
+export { getStaticProps };
 export default Parties;
