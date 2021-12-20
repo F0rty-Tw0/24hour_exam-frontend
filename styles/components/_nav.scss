@@ -1,0 +1,107 @@
+.nav {
+  height: $spacing-xl;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__img {
+    border-radius: 50%;
+    @media screen and (min-width: $screen-s) {
+      display: none;
+    }
+  }
+  &__logo {
+    color: $color-title;
+    font-weight: 600;
+  }
+  &__list,
+  &__link {
+    display: flex;
+    & {
+      justify-content: space-around;
+    }
+    @media screen and (min-width: $screen-xs) {
+      justify-content: center;
+      column-gap: $spacing-xl;
+    }
+  }
+  &__link {
+    flex-direction: column;
+    align-items: center;
+    row-gap: $spacing-xxs;
+    color: $color-title;
+    font-weight: 600;
+    transition: color 0.2s ease;
+    &:hover {
+      @media screen and (min-width: $screen-s) {
+        color: $color-primary;
+      }
+    }
+  }
+  &__name {
+    font-size: $font-size-xxs;
+    @media screen and (max-width: $screen-xxs) {
+      display: none;
+    }
+    @media screen and (min-width: $screen-s) {
+      font-size: $font-size-s;
+    }
+  }
+  &__icon {
+    font-size: $font-size-l;
+    @media screen and (min-width: $screen-s) {
+      display: none;
+    }
+  }
+
+  &__menu {
+    @media screen and (max-width: $screen-s) {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      background-color: $color-container;
+      box-shadow: $shadow-up;
+      width: 100%;
+      height: 100%;
+      height: $spacing-xxl;
+      padding: 0 $spacing-s;
+      display: grid;
+      align-content: center;
+      border-radius: $spacing-m $spacing-m 0 0;
+      transition: all 0.4s ease-in-out;
+    }
+  }
+  @media screen and (min-width: $screen-s) {
+    height: calc($spacing-xl + $spacing-m);
+  }
+}
+
+.active {
+  position: relative;
+  color: $color-primary;
+  transition: 0.3s ease-in-out;
+  &::before {
+    @media screen and (max-width: $screen-xxs) {
+      content: '';
+      position: absolute;
+      bottom: -0.45rem;
+      width: 4px;
+      height: 4px;
+      background-color: $color-primary;
+      border-radius: $border-radius-full;
+    }
+
+    @media screen and (min-width: $screen-s) {
+      content: '';
+      position: absolute;
+      bottom: -0.75rem;
+      width: 4px;
+      height: 4px;
+      background-color: $color-primary;
+      border-radius: $border-radius-full;
+    }
+  }
+}
+.disabled{
+  pointer-events:none;
+  opacity:0.5;
+}

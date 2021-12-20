@@ -1,0 +1,91 @@
+.parties {
+  &__icon {
+    font-size: $spacing-xl;
+    margin: $spacing-m 0 $spacing-m $spacing-s;
+    color: $color-text;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    height: $spacing-xxxl;
+  }
+  &__title {
+    margin: $spacing-m $spacing-m;
+    text-transform: uppercase;
+    &--top {
+      display: block;
+      font-size: $font-size-m;
+      font-weight: 600;
+      letter-spacing: 6.5px;
+    }
+    &--bottom {
+      font-size: $font-size-xs;
+      font-weight: 300;
+      letter-spacing: 3.55px;
+      opacity: 0.8;
+    }
+  }
+
+  &__profiles {
+    display: grid;
+    row-gap: $spacing-s;
+  }
+  &__profile {
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    align-items: center;
+    padding: $spacing-s $spacing-l $spacing-s $spacing-s;
+    overflow: hidden;
+    border-radius: $spacing-xs;
+    box-shadow: $shadow-down;
+    transition: transform 0.25s cubic-bezier(0.7, 0.98, 0.86, 0.98),
+      box-shadow 0.25s cubic-bezier(0.7, 0.98, 0.86, 0.98);
+    background-color: $color-body;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: $shadow-hover;
+    }
+  }
+  &__picture {
+    width: $spacing-l;
+    height: $spacing-l;
+    text-align: center;
+    font-size: $font-size-m;
+    font-weight: 600;
+    border-radius: $border-radius-full;
+    background-color: $color-text-muted;
+    color: $color-body;
+    box-shadow: 0 0 0 10px $color-text-gray-alt, 0 0 0 22px $color-text-gray;
+    @media screen and (min-width: $screen-xs) {
+      width: $spacing-xl;
+      height: $spacing-xl;
+      font-size: $font-size-xl;
+    }
+  }
+  &__name {
+    color: $color-text-muted;
+    font-weight: 600;
+    letter-spacing: 0.64px;
+    margin-left: $spacing-l;
+    @media screen and (min-width: $screen-xs) {
+      font-size: $font-size-m;
+    }
+  }
+
+  &__value {
+    color: $color-primary-alt;
+    font-weight: 600;
+    font-size: $font-size-m;
+    text-align: right;
+    @media screen and (min-width: $screen-xs) {
+      margin-left: $spacing-l;
+      font-size: $font-size-l;
+    }
+  }
+  &__vote {
+    font-size: $font-size-l;
+    color: $color-primary;
+  }
+}

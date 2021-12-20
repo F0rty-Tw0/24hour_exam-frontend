@@ -1,0 +1,72 @@
+$hue: 174;
+$hue-alt: 191;
+$sat: 63%;
+
+$font-main: 'Open Sans', sans-serif;
+
+$theme-dark-bg-900: #27241d;
+$theme-dark-bg-800: #423d33;
+$theme-dark-bg-700: #504a40;
+$theme-dark-bg-600: #625d52;
+$theme-dark-bg-500: #857f72;
+$theme-dark-bg-400: #a39e93;
+$theme-dark-bg-300: #b8b2a7;
+$theme-dark-bg-200: #d3cec4;
+$theme-dark-bg-100: #e8e7e1;
+
+$color-primary-dark: hsl($hue, $sat, 70%);
+
+$color-primary: hsl($hue, $sat, 40%);
+$color-primary-alt: hsl($hue-alt, 98%, 56%);
+$color-title: hsl($hue, 12%, 15%);
+$color-text: hsl($hue, 8%, 35%);
+$color-text-muted: hsl($hue, 8%, 65%);
+$color-text-gray: hsl(213, 42%, 94%);
+$color-text-gray-alt: hsl(214, 25%, 87%);
+$color-body: hsl($hue, 100%, 99%);
+$color-danger: hsl(0, 83%, 64%);
+$color-container: #ffffff;
+
+$font-size-xxxl: 5rem;
+$font-size-xxl: 3.5rem;
+$font-size-xl: 2rem;
+$font-size-l: 1.5rem;
+$font-size-m: 1.25rem;
+$font-size-s: 0.935rem;
+$font-size-xs: 0.8rem;
+$font-size-xxs: 0.625rem;
+
+$spacing-xxxl: 7rem;
+$spacing-xxl: 4rem;
+$spacing-xl: 3rem;
+$spacing-l: 2rem;
+$spacing-m: 1.5rem;
+$spacing-s: 1rem;
+$spacing-xs: 0.5rem;
+$spacing-xxs: 0.25rem;
+
+$shadow-up: 0 -1px 12px hsla($hue, $sat, 15%, 0.15);
+$shadow-down: 0 1px 12px hsla($hue, $sat, 15%, 0.15);
+$shadow-around: 0 5px 10px hsla($hue, $sat, 15%, 0.15);
+$shadow-icon: 0 13px 26px hsla($hue, $sat, 15%, 0.15),
+  0 3px 6px hsla($hue, $sat, 15%, 0.15);
+$shadow-hover: 0 9px 37px 11px hsla($hue, $sat, 15%, 0.15);
+
+$z-tooltip: 10;
+$z-fixed: 100;
+
+$border-radius-half: 2rem;
+$border-radius-full: 4rem;
+
+$screen-xxs: 320px;
+$screen-xs: 576px;
+$screen-s: 767px;
+$screen-m: 968px;
+$screen-l: 1024px;
+
+@media screen and (min-width: $screen-m) {
+  :root {
+    $font-size-l: 2.25rem;
+    $font-size-s: 1rem;
+  }
+}

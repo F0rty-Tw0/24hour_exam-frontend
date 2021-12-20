@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -20,7 +19,7 @@ const NavBar = () => {
   return (
     <nav className='nav container'>
       <Link passHref href={`/`}>
-        <a className='nav__logo'>EasyVote</a>
+        <a className='nav__logo'>Voting</a>
       </Link>
 
       <div className='nav__menu' id='nav-menu'>
@@ -34,23 +33,23 @@ const NavBar = () => {
             </Link>
           </li>
 
-          <li className={`nav__item `}>
-            <Link passHref href={`/profile`}>
-              <a className={`nav__link ${getActiveLink('/profile')}`}>
-                <BiUser className='nav__icon' />
-                <span className='nav__name'>Profile</span>
-              </a>
-            </Link>
-          </li>
-          <li className={`nav__item `}>
-            <Link passHref href={`/group`}>
-              <a className={`nav__link ${getActiveLink('/group')}`}>
+          <li className={'nav__item'}>
+            <Link passHref href={`/admin`}>
+              <a className={`nav__link ${getActiveLink('/admin')}`}>
                 <BiBookAlt className='nav__icon' />
-                <span className='nav__name'>Group</span>
+                <span className='nav__name'>Admin</span>
               </a>
             </Link>
           </li>
-          <li className={`nav__item `}>
+          <li className={'nav__item'}>
+            <Link passHref href={`/candidates`}>
+              <a className={`nav__link ${getActiveLink('/candidates')}`}>
+                <BiUser className='nav__icon' />
+                <span className='nav__name'>Candidates</span>
+              </a>
+            </Link>
+          </li>
+          <li className={'nav__item'}>
             <Link passHref href={`/parties`}>
               <a className={`nav__link ${getActiveLink('/parties')}`}>
                 <BiBriefcaseAlt className='nav__icon' />
@@ -58,11 +57,11 @@ const NavBar = () => {
               </a>
             </Link>
           </li>
-          <li className={`nav__item `}>
-            <Link passHref href={`/posts`}>
-              <a className={`nav__link ${getActiveLink('/posts')}`}>
+          <li className={'nav__item'}>
+            <Link passHref href={`/elections`}>
+              <a className={`nav__link ${getActiveLink('/elections')}`}>
                 <BiMessageSquareDetail className='nav__icon' />
-                <span className='nav__name'>My Posts</span>
+                <span className='nav__name'>Elections</span>
               </a>
             </Link>
           </li>

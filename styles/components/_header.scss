@@ -1,0 +1,12 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: $z-fixed;
+  background-color: $color-container;
+  transition: 0.4s ease-in-out;
+}
+.scrolled {
+  box-shadow: $shadow-down;
+}

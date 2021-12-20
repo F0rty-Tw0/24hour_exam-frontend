@@ -1,9 +1,24 @@
-html,
+@import './variables';
+@import './components/_shared';
+@import './components/_base-layout';
+@import './components/_header';
+@import './components/_parties';
+@import './components/_nav';
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: $font-main;
+  font-size: $font-size-s;
+  margin: $spacing-xl 0 0 0;
+  background-color: $color-body;
+  transition: all 0.2s ease;
+}
+
+ul {
+  list-style: none;
 }
 
 a {
@@ -12,5 +27,13 @@ a {
 }
 
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
+}
+
+button {
+  outline: none;
+  border: none;
+  background-color: transparent;
 }
