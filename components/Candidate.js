@@ -4,7 +4,7 @@ import { ImBin } from 'react-icons/im';
 import { AiOutlineEdit, AiFillSave } from 'react-icons/ai';
 import { deleteCandidate, updateCandidate } from 'endpoints/candidates';
 
-const Candidate = ({ candidate, parties }) => {
+const Candidate = ({ candidate }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState({
     name: candidate.name,
@@ -37,6 +37,7 @@ const Candidate = ({ candidate, parties }) => {
         <input
           type='text'
           name='name'
+          value={candidate.name}
           onChange={(event) =>
             setFormData({ ...formData, name: event.target.value })
           }
