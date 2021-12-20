@@ -1,0 +1,83 @@
+.input {
+  display: block;
+  width: 100%;
+  background: transparent;
+  font-size: $font-size-s;
+  color: $color-text;
+  height: $spacing-xl;
+  padding: 0 $spacing-xxs;
+
+  &:focus {
+    + .input {
+      &--focus::before {
+        width: 100%;
+      }
+      &--focus::after {
+        top: -15px;
+      }
+    }
+  }
+  &__error {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: $font-size-xs;
+    color: $color-danger;
+  }
+  &--filled {
+    + .input {
+      &--focus::before {
+        width: 100%;
+      }
+      &--focus::after {
+        top: -15px;
+      }
+    }
+  }
+  &--empty {
+    color: transparent;
+  }
+  &--focus {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    pointer-events: none;
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      width: 0;
+      height: 2px;
+      transition: all 0.4s;
+      background: linear-gradient(to right, $color-primary-alt, $color-primary);
+    }
+    &::after {
+      font-size: $font-size-s;
+      color: $color-text-muted;
+      content: attr(placeholder);
+      width: 100%;
+      position: absolute;
+      top: $spacing-s;
+      padding-left: $spacing-xxs;
+      transition: all 0.4s;
+    }
+  }
+}
+
+.input {
+  &__wrapper {
+    position: relative;
+    border-bottom: 2px solid $color-text-muted;
+    margin-bottom: $spacing-l;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[value='0000-00-00']::-webkit-datetime-edit {
+  color: transparent;
+}

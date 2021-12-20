@@ -50,14 +50,6 @@ const NavBar = () => {
             </Link>
           </li>
           <li className={'nav__item'}>
-            <Link passHref href={`/parties`}>
-              <a className={`nav__link ${getActiveLink('/parties')}`}>
-                <BiBriefcaseAlt className='nav__icon' />
-                <span className='nav__name'>Parties</span>
-              </a>
-            </Link>
-          </li>
-          <li className={'nav__item'}>
             <Link passHref href={`/elections`}>
               <a className={`nav__link ${getActiveLink('/elections')}`}>
                 <BiMessageSquareDetail className='nav__icon' />

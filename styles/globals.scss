@@ -3,6 +3,8 @@
 @import './components/_base-layout';
 @import './components/_header';
 @import './components/_parties';
+@import './components/_input';
+@import './components/_form';
 @import './components/_nav';
 
 html {
@@ -36,4 +38,9 @@ button {
   outline: none;
   border: none;
   background-color: transparent;
+}
+
+input, select {
+  outline: none;
+  border: none;
 }
